@@ -7,12 +7,18 @@
 #$ BOARD_NAME: NEXUS_XR
 #$ CATEGORY: REMAPPING
 #$ STATUS: COMMUNITY
-#$ KEYWORDS: aux sbus servo5 swash 4th servo h4
+#$ KEYWORDS: aux sbus servo5 swash 4th servo h4 x4 cp90h cp90x
 #$ AUTHOR: Kay
-#$ DESCRIPTION: Remaps a free port to Servo 5 and assigns it as the 4th swashplate servo for a 4-servo CCPM setup.
+#$ DESCRIPTION: Remaps a free port to Servo 5 and assigns it as the 4th swashplate servo for a 4H or 4X swashplate setup.
 #$ DESCRIPTION: Valid for the VANTAC RF007, NEXUS X and NEXUS XR because these boards share the same Servo 5 remap resources.
 #$ DESCRIPTION: Choose either AUX or SBUS for the 4th swash servo output.
+#$ DESCRIPTION: Choose either a 4H or 4X mixer preset depending on your swash geometry and servo placement.
+#$ DESCRIPTION: 4H uses S1=front, S2=back, S3=right, S5=left.
+#$ DESCRIPTION: 4X uses S1=front-right, S2=front-left, S3=back-left, S5=back-right.
+#$ DESCRIPTION: This preset remains valid until the Configurator supports 4H and 4X servo setups directly.
 #$ DESCRIPTION: This preset is not compatible with using the same port for a bufferpack.
+#$ DESCRIPTION: This preset does not clear existing custom mixer rules automatically.
+#$ DESCRIPTION: Before applying it, check whether mixer rules 0 through 12 are already in use and remove or adjust conflicting rules manually.
 #$ PRIORITY: 0
 #$ FORCE_OPTIONS_REVIEW: TRUE
 
@@ -27,12 +33,31 @@
     #$ OPTION END
 #$ OPTION_GROUP END
 
-mixer rule 0 add SC S1 500 0
-mixer rule 1 add SC S2 500 0
-mixer rule 2 add SC S3 500 0
-mixer rule 3 add SC S5 500 0
-mixer rule 4 add SR S2 1000 0
-mixer rule 5 add SR S3 -1000 0
-mixer rule 6 add SP S5 1000 0
-mixer rule 7 add SP S1 -1000 0
-mixer rule 8 set SY S4 1000 0
+#$ OPTION_GROUP BEGIN: (EXCLUSIVE) Swash Type
+    #$ OPTION BEGIN (UNCHECKED): 4H (Front/Back/Right/Left)
+    mixer rule 0 add SC S1 500 0
+    mixer rule 1 add SC S2 500 0
+    mixer rule 2 add SC S3 500 0
+    mixer rule 3 add SC S5 500 0
+    mixer rule 4 add SR S2 1000 0
+    mixer rule 5 add SR S3 -1000 0
+    mixer rule 6 add SP S5 1000 0
+    mixer rule 7 add SP S1 -1000 0
+    mixer rule 8 set SY S4 1000 0
+    #$ OPTION END
+    #$ OPTION BEGIN (UNCHECKED): 4X (front-right / front-left / back-Left / back-right)
+    mixer rule 0 add SC S1 500 0
+    mixer rule 1 add SC S2 500 0
+    mixer rule 2 add SC S3 500 0
+    mixer rule 3 add SC S5 500 0
+    mixer rule 4 add SP S1 707 0
+    mixer rule 5 add SR S1 -707 0
+    mixer rule 6 add SP S2 707 0
+    mixer rule 7 add SR S2 707 0
+    mixer rule 8 add SP S3 -707 0
+    mixer rule 9 add SR S3 707 0
+    mixer rule 10 add SP S5 -707 0
+    mixer rule 11 add SR S5 -707 0
+    mixer rule 12 set SY S4 1000 0
+    #$ OPTION END
+#$ OPTION_GROUP END
