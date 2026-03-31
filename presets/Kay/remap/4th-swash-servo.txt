@@ -1,0 +1,38 @@
+#$ TITLE: 4th Swash Servo on Servo 5
+#$ FIRMWARE_VERSION: 4.4
+#$ FIRMWARE_VERSION: 4.5
+#$ FIRMWARE_VERSION: 4.6
+#$ BOARD_NAME: VANTAC_RF007
+#$ BOARD_NAME: NEXUS_X
+#$ BOARD_NAME: NEXUS_XR
+#$ CATEGORY: REMAPPING
+#$ STATUS: COMMUNITY
+#$ KEYWORDS: aux sbus servo5 swash 4th servo h4
+#$ AUTHOR: Kay
+#$ DESCRIPTION: Remaps a free port to Servo 5 and assigns it as the 4th swashplate servo for a 4-servo CCPM setup.
+#$ DESCRIPTION: Valid for the VANTAC RF007, NEXUS X and NEXUS XR because these boards share the same Servo 5 remap resources.
+#$ DESCRIPTION: Choose either AUX or SBUS for the 4th swash servo output.
+#$ DESCRIPTION: This preset is not compatible with using the same port for a bufferpack.
+#$ PRIORITY: 0
+#$ FORCE_OPTIONS_REVIEW: TRUE
+
+#$ OPTION_GROUP BEGIN: (EXCLUSIVE) Port
+    #$ OPTION BEGIN (UNCHECKED): AUX
+    resource SERIAL_TX 1 NONE
+    resource SERVO 5 B06
+    #$ OPTION END
+    #$ OPTION BEGIN (UNCHECKED): SBUS
+    resource SERIAL_RX 1 NONE
+    resource SERVO 5 B07
+    #$ OPTION END
+#$ OPTION_GROUP END
+
+mixer rule 0 add SC S1 500 0
+mixer rule 1 add SC S2 500 0
+mixer rule 2 add SC S3 500 0
+mixer rule 3 add SC S5 500 0
+mixer rule 4 add SR S2 1000 0
+mixer rule 5 add SR S3 -1000 0
+mixer rule 6 add SP S5 1000 0
+mixer rule 7 add SP S1 -1000 0
+mixer rule 8 set SY S4 1000 0
