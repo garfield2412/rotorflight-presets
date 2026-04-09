@@ -7,7 +7,7 @@
 #$ BOARD_NAME: NEXUS_XR
 #$ CATEGORY: REMAPPING
 #$ STATUS: COMMUNITY
-#$ KEYWORDS: aux sbus servo5 swash 4th servo h4 x4 cp90h cp90x
+#$ KEYWORDS: aux, sbus, servo5, swash, 4th servo, h4, x4, cp90h, cp90x
 #$ AUTHOR: Kay
 #$ DESCRIPTION: Remaps a free port to Servo 5 and assigns it as the 4th swashplate servo for a 4H or 4X swashplate setup.
 #$ DESCRIPTION: Valid for the VANTAC RF007, NEXUS X and NEXUS XR because these boards share the same Servo 5 remap resources.
