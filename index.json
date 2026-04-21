@@ -145,13 +145,17 @@
       "etocii",
       "FDRC",
       "Hans Ouwehand",
+      "Kay",
       "The Rotorflight Team"
     ],
     "keywords": [
+      "4th servo",
       "aux",
       "bec",
       "bufferpack",
       "capacitor",
+      "cp90h",
+      "cp90x",
       "Dashboards",
       "Edgetx",
       "ESC Telemetry",
@@ -160,6 +164,7 @@
       "f.port",
       "filters",
       "fport",
+      "h4",
       "Inflight tuning",
       "motorized tail",
       "RC smoothing",
@@ -167,10 +172,13 @@
       "s.bus",
       "sbus",
       "servo",
+      "servo5",
       "Servos",
+      "swash",
       "Telemetry",
       "TUNING",
       "voltage",
+      "x4",
       "XDfly"
     ],
     "board_name": [
@@ -866,6 +874,37 @@
       ],
       "author": "Archie RC",
       "priority": 0
+    },
+    {
+      "fullPath": "presets/Kay/remap/4th-swash-servo.txt",
+      "hash": "828d4f6d3d82c8f4e3492e47b6732fe73e47886813ed3f2337c94dc1c673965e",
+      "title": "4th Swash Servo on Servo 5",
+      "firmware_version": [
+        "4.4",
+        "4.5",
+        "4.6"
+      ],
+      "board_name": [
+        "VANTAC_RF007",
+        "NEXUS_X",
+        "NEXUS_XR"
+      ],
+      "category": "REMAPPING",
+      "status": "COMMUNITY",
+      "keywords": [
+        "aux",
+        "sbus",
+        "servo5",
+        "swash",
+        "4th servo",
+        "h4",
+        "x4",
+        "cp90h",
+        "cp90x"
+      ],
+      "author": "Kay",
+      "priority": 0,
+      "force_options_review": true
     },
     {
       "fullPath": "presets/RDMS/nexus/motorized-tail.txt",
