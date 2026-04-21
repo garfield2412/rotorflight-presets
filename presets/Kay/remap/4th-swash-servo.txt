@@ -1,4 +1,4 @@
-#$ TITLE: 4th Swash Servo on Servo 5
+#$ TITLE: 4th Swash Servo (4H / 4X) on Servo 5
 #$ FIRMWARE_VERSION: 4.4
 #$ FIRMWARE_VERSION: 4.5
 #$ FIRMWARE_VERSION: 4.6
