@@ -877,8 +877,8 @@
     },
     {
       "fullPath": "presets/Kay/remap/4th-swash-servo.txt",
-      "hash": "828d4f6d3d82c8f4e3492e47b6732fe73e47886813ed3f2337c94dc1c673965e",
-      "title": "4th Swash Servo on Servo 5",
+      "hash": "4eab8c20d0c78fc7177cac525f78ea6a5ebc42c455d854651a6eaa397651d82a",
+      "title": "4th Swash Servo (4H / 4X) on Servo 5",
       "firmware_version": [
         "4.4",
         "4.5",
